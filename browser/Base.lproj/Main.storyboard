@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yaI-iC-Q4h">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Browser-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogd-bC-jHX">
+                                <rect key="frame" x="20" y="49" width="27" height="22"/>
+                                <state key="normal" image="arrow.clockwise" catalog="system"/>
+                                <connections>
+                                    <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZkY-N9-JLZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBB-u6-NJ4">
+                                <rect key="frame" x="367" y="49" width="27" height="22"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSi-yc-hM5"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X5C-MJ-WzG">
+                                <rect key="frame" x="72" y="78" width="270" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="iu9-NF-Eap"/>
+                                </constraints>
+                            </progressView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-Zk-a8S">
+                                <rect key="frame" x="0.0" y="82" width="414" height="731"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dlK-7W-D6X">
+                                <rect key="frame" x="77" y="43" width="260" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="260" id="qoC-vV-Llu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dlK-7W-D6X" firstAttribute="leading" secondItem="Ogd-bC-jHX" secondAttribute="trailing" constant="30" id="4gy-2j-InS"/>
+                            <constraint firstItem="Ye2-Zk-a8S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4nV-bB-rXD"/>
+                            <constraint firstItem="Ye2-Zk-a8S" firstAttribute="top" secondItem="X5C-MJ-WzG" secondAttribute="bottom" id="7wP-E5-lUJ"/>
+                            <constraint firstItem="Ogd-bC-jHX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9UN-MY-bIf"/>
+                            <constraint firstItem="X5C-MJ-WzG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="A8W-4N-oQo"/>
+                            <constraint firstItem="Ogd-bC-jHX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="BLF-RG-eEh"/>
+                            <constraint firstItem="Ye2-Zk-a8S" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Z8M-LN-NAg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QBB-u6-NJ4" secondAttribute="trailing" constant="20" id="b2j-YN-ENU"/>
+                            <constraint firstItem="Ye2-Zk-a8S" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cua-Z6-33y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="dlK-7W-D6X" secondAttribute="top" constant="1" id="dE9-k5-F9t"/>
+                            <constraint firstItem="QBB-u6-NJ4" firstAttribute="leading" secondItem="dlK-7W-D6X" secondAttribute="trailing" constant="30" id="eKR-7J-fyb"/>
+                            <constraint firstItem="QBB-u6-NJ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="qhg-n6-xzT"/>
+                            <constraint firstItem="dlK-7W-D6X" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t1S-Zo-nIR"/>
+                            <constraint firstItem="X5C-MJ-WzG" firstAttribute="top" secondItem="dlK-7W-D6X" secondAttribute="bottom" constant="1" id="t5v-9q-yUS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X5C-MJ-WzG" secondAttribute="trailing" constant="72" id="xPI-H1-Pcm"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Browser" image="book.fill" catalog="system" id="66l-xG-kVN"/>
+                    <connections>
+                        <outlet property="progressBar" destination="X5C-MJ-WzG" id="6st-Bv-C8b"/>
+                        <outlet property="searchTextField" destination="dlK-7W-D6X" id="tuM-DK-9pj"/>
+                        <outlet property="webView" destination="Ye2-Zk-a8S" id="rbA-gF-92K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="138.61607142857142"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="mc9-tF-DlJ">
+            <objects>
+                <tableViewController id="cLY-Tv-Q7I" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NVH-LL-LEC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="txs-pI-kyM">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="txs-pI-kyM" id="ufk-C4-8VL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cLY-Tv-Q7I" id="OiQ-Us-JFj"/>
+                            <outlet property="delegate" destination="cLY-Tv-Q7I" id="1xq-Na-Oro"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="NsO-ms-q6Q"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2oU-ci-I5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1778" y="139"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FEV-NG-Koj">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yaI-iC-Q4h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mvN-K2-WyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="HUT-y7-HJ1"/>
+                        <segue destination="cLY-Tv-Q7I" kind="relationship" relationship="viewControllers" id="9QH-bU-ahC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6f-9a-yA4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="book.fill" catalog="system" width="128" height="102"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
